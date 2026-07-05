@@ -34,6 +34,9 @@ def fetch_and_create_ics(start_date, end_date, filepath):
         e.make_all_day()
         cal.events.add(e)
 
+    # イベントを日付順（古い順）に並び替える
+    cal.events = sorted(cal.events, key=lambda e: e.begin)
+
     with open(filepath, "w", encoding="utf-8") as f:
         f.writelines(cal.serialize_iter())
 
