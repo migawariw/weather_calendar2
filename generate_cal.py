@@ -28,7 +28,7 @@ def fetch_and_create_ics(start_date, end_date, filepath):
 
     for i in range(len(daily['time'])):
         e = Event()
-        e.name = f"{wmo_to_text(daily['weather_code'][i])} {daily['temperature_2m_mean'][i]:.1f}℃"
+        e.name = f"{wmo_to_text(daily['weather_code'][i])} {daily['temperature_2m_mean'][i]:.1f}°C"
         e.description = f"降水量: {daily['precipitation_sum'][i]}mm"
         e.begin = daily['time'][i]
         e.make_all_day()
