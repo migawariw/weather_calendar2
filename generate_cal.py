@@ -49,7 +49,8 @@ def main():
 
     # 2. 毎月1日だけ、前月分の確定データを「年-月.ics」として書き出し
     # (例: 7月1日なら6月1日〜30日分のデータを作成)
-    if today.day == 1:
+    # if today.day == 1:
+    if True:
         # 前月の最後の日の情報から、前月の年と月を取得
         last_day_of_last_month = today - datetime.timedelta(days=1)
         last_month_year = last_day_of_last_month.year
